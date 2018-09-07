@@ -22,7 +22,7 @@ function comments(state = [], action) {
 		case THUMB_UP_COMMENT:
 			return state.map(comment => {
 					if(comment.id === action.id) {
-						comment.thumb_up++;
+						return {...comment, thumb_up: comment.thumb_up++}
 					}
 					return comment;
 				})
